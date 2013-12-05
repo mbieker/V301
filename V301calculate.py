@@ -7,6 +7,53 @@ from scipy import *
 from uncertainties import *
 import matplotlib.pyplot as plt
 
+def make_LaTeX_table(data,header, flip= 'false', onedim = 'false'):
+    output = '\\begin{tabular}{'
+    #Get dimensions
+    if(onedim == 'true'):
+        if(flip == 'false'):
+        
+            data = array([[i] for i in data])
+        
+        else:
+            data = array([data])
+        
+
+    row_cnt, col_cnt = data.shape
+    header_cnt = len(header)
+    
+    if(header_cnt == col_cnt and flip== 'false'):
+        #Make Format
+        output += '|'
+        for i in range(col_cnt):
+            output += 'c|'
+        output += '}\n\\hline\n'+ header[0]
+        for i in range (1,col_cnt):
+            output += ' & ' + header[i]
+        output += ' \\\\\n\\hline\n'
+        for i in data:
+            output += str(i[0])
+            for j in range(1,col_cnt):
+                output += ' & ' + str( i[j])
+            output += '\\\\\n'
+        output += '\\hline\n\\end{tabular}\n'
+                            
+        return output
+    else:
+        if(row_cnt == header_cnt):
+            output += '|c|' + (col_cnt)*'c' + '|}\n\\hline\n'
+            for i in range(row_cnt):
+                output += header[i]
+                for j in range(col_cnt):
+                    output += ' & ' + str(data[i][j])
+                output += '\\\\\n\\hline\n'
+                
+            output += '\\end{tabular}\n'
+            return output
+        else:
+            return 'ERROR'
+
+    
 def lin_reg(x,y):
     N = len(x)
     sumx = x.sum()
@@ -108,4 +155,7 @@ plt.ylabel(r"$N [W]$")
 plt.legend()
 plt.savefig('Plot4.png')
 plt.show()
+
+data = array([[round(R_a[i],1),round(P[i],3)] for i in range(11)])
+print(make_LaTeX_table(data,[r'$\frac{U_k}{I}$',r'$U_k\cdot I$']))
  
