@@ -7,6 +7,19 @@ from scipy import *
 from uncertainties import *
 import matplotlib.pyplot as plt
 
+def lin_reg(x,y):
+    N = len(x)
+    sumx = x.sum()
+    sumy = y.sum()
+    sumxx = (x*x).sum()
+    sumxy = (x*y).sum()
+    m = (sumxy -  sumx*sumy/N)/(sumxx- sumx**2/N)
+    b = sumy/N - m*sumx/N
+    
+    sy = sqrt(((y - m*x - b)**2).sum()/(N-1))
+    m_err = sy *sqrt(N/(N*sumxx - sumx**2))
+    b_err= m_err * sqrt(sumxx/N)
+    return ufloat(m,m_err), ufloat(b,b_err)
 
 # Messwerte wie aufgenommen, U in Volt und I in mA:
 
@@ -25,8 +38,40 @@ I4=vI3/1000.0
 I5=vI5/1000.0
 
 plt.plot(I2,U2,'x')
-plt.title('$U_K = f(I)$ fuer die Monozelle')
 plt.xlabel('I[A]')
 plt.ylabel('U[V]')
-plt.show()
+plt.savefig('Plot1.png')
+plt.close()
 
+plt.plot(I4,U4,'x')
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.savefig('Plot2.png')
+plt.close()
+
+plt.plot(I5,U5,'x')
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.savefig('Plot3.png')
+plt.close()
+
+print "Monozelle:"
+m,b = lin_reg(I2,U2)
+print "-Innenwiederstand:"
+print m
+print "Leerlaufspannung:"
+print b
+
+print "Rechteckausgang:"
+m,b = lin_reg(I4,U4)
+print "-Innenwiederstand:"
+print m
+print "Leerlaufspannung:"
+print b
+
+print "Sinusausgang:"
+m,b = lin_reg(I5,U5)
+print "-Innenwiederstand:"
+print m
+print "Leerlaufspannung:"
+print b
