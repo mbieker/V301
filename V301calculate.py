@@ -23,6 +23,7 @@ def lin_reg(x,y):
 
 # Messwerte wie aufgenommen, U in Volt und I in mA:
 
+U_k= 1.68
 U2=array([1.42, 1.395, 1.37, 1.32, 1.30, 1.23, 1.16, 1.04, 0.86, 0.61, 0.082])
 vI2=array([23, 25.9, 28.5, 31.9, 33.5, 39.5, 45, 56, 72, 93, 139])
 U3=array([2.07, 2.09, 2.15, 2.19, 2.26, 2.35, 2.42, 2.58, 2.718, 2.91, 3.73])
@@ -34,26 +35,8 @@ vI5=array([0.230, 0.245, 0.2725, 0.296, 0.305, 0.361, 0.44, 0.57, 0.81, 1.13, 1.
 # Umwandlung von I in SI-Einheit.
 I2=vI2/1000.0
 I3=vI3/1000.0
-I4=vI3/1000.0
+I4=vI4/1000.0
 I5=vI5/1000.0
-
-plt.plot(I2,U2,'x')
-plt.xlabel('I[A]')
-plt.ylabel('U[V]')
-plt.savefig('Plot1.png')
-plt.close()
-
-plt.plot(I4,U4,'x')
-plt.xlabel('I[A]')
-plt.ylabel('U[V]')
-plt.savefig('Plot2.png')
-plt.close()
-
-plt.plot(I5,U5,'x')
-plt.xlabel('I[A]')
-plt.ylabel('U[V]')
-plt.savefig('Plot3.png')
-plt.close()
 
 print "Monozelle:"
 m,b = lin_reg(I2,U2)
@@ -61,6 +44,18 @@ print "-Innenwiederstand:"
 print m
 print "Leerlaufspannung:"
 print b
+Mono_Ri = - m
+Mono_U0 = b
+x = linspace(0.02,0.16)
+plt.plot(x, m.n*x+b.n, label = "Lineare Regression" )
+plt.plot(I2,U2,'x', label = "Messwerte")
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.xlim(0.02,0.16)
+plt.legend()
+plt.savefig('Plot1.png')
+plt.close()
+
 
 print "Rechteckausgang:"
 m,b = lin_reg(I4,U4)
@@ -69,9 +64,48 @@ print m
 print "Leerlaufspannung:"
 print b
 
+x = linspace(0,0.008)
+plt.ylim(0,0.5)
+plt.plot(x, m.n*x+b.n, label = "Lineare Regression" )
+plt.plot(I4,U4,'x', label = "Messwerte")
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.legend()
+plt.savefig('Plot2.png')
+plt.close()
+
 print "Sinusausgang:"
 m,b = lin_reg(I5,U5)
 print "-Innenwiederstand:"
 print m
 print "Leerlaufspannung:"
 print b
+
+x = linspace(0,0.002)
+plt.plot(x, m.n*x+b.n, label = "Lineare Regression" )
+plt.xlim(0,0.002)
+plt.plot(I5,U5,'x', label = 'Messwerte')
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.legend()
+plt.savefig('Plot3.png')
+
+print('Fehler der direkten Messung')
+print("U_0 = %s"% str(U_k *(1+ Mono_Ri/10e6)) )
+print('Delta_U = %s' % str(U_k*Mono_Ri/10e6))  
+plt.close()
+
+print('Leistung der Monozelle')
+P = U2*I2
+R_a = U2/I2
+
+plt.plot(R_a, P ,'x', label = 'Messwerte')
+R= linspace(0,100,100)
+P_th = Mono_U0.n**2 *R /(R+Mono_Ri.n)**2 
+plt.plot(R,P_th, '-' ,label = "Erwarteter Leistungsverlauf") 
+plt.xlabel(r"$R_a [\Omega]$")
+plt.ylabel(r"$N [W]$")
+plt.legend()
+plt.savefig('Plot4.png')
+plt.show()
+ 
