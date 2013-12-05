@@ -32,14 +32,14 @@ germandbls={ß},
 \section{Einleitung}
 In diesem Versuch sollen die Eigenschaften realer Spannungsquellen betrachtet werden. Von besonderer Bedeutung sind hier die Leerlaufspannung und der Innenwiderstand.
 \section{Theorie}
-Als Spannungsquelle beschreibt man ein elektrisches Bauteil mit zwei Anschl\"usen, das zwischen diesen Polen \"uber einen endlichen Zeitraum eine gleichm\"a\ss ige Sannung bereitstellt. Bei einer idealen Sapnnungsquelle h\"angt diese Sapnnung nicht von entnommenenem Strom ab.
+Als Spannungsquelle beschreibt man ein elektrisches Bauteil mit zwei Anschl\"ussen, das zwischen diesen Polen \"uber einen endlichen Zeitraum eine gleichm\"a\ss ige Spannung bereitstellt. Bei einer idealen Spannungsquelle h\"angt diese Spannung nicht von entnommenenem Strom ab.
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{abb3.png}
 \caption{Ersatzschaltung f\"ur eine reale Spannungsquelle}
 \label{Ersatz}
 \end{figure}
-Eine reale Sapnnnungsquelle durch eine Ersatzschaltung aus einer idealen Sapnnungsquelle und einem Widerstand $R_i$ dargestellt werden (siehe Abb. \ref{Ersatz}). Hierbei ist $R_i$ der Innenwiderstand der Quelle und  $U_0$ die sogenannte Leerlaufspannung, dies ist die Spannung zwischen den Polen anliegt, wenn aus der Sapnnungsquelle kein Strom entnommen wird. $U_k$ ist die Klemmenspannung, die zwischen den Polen der belasteten Quelle anliegt. Gem\"a\ss\ der Maschenregel (2. Kirchhoffsches Gesetz)
+Eine reale Spannungsquelle durch eine Ersatzschaltung aus einer idealen Spannungsquelle und einem Widerstand $R_i$ dargestellt werden (siehe Abb. \ref{Ersatz}). Hierbei ist $R_i$ der Innenwiderstand der Quelle und  $U_0$ die sogenannte Leerlaufspannung, dies ist die Spannung, die zwischen den Polen anliegt, wenn aus der Spannungsquelle kein Strom entnommen wird. $U_k$ ist die Klemmenspannung, die zwischen den Polen der belasteten Quelle anliegt. Gem\"a\ss\ der Maschenregel (2. Kirchhoffsches Gesetz)
 \begin{equation}
 0 = -U_0 + U_k + U_{Ri}
 \end{equation}
@@ -47,9 +47,9 @@ und dem Ohm'schen Gesetz
 \begin{equation}
 U_{Ri} = R_i \cdot I
 \end{equation}
-gilt f\"ur die Klemmenspannung.
+gilt f\"ur die Klemmenspannung
 \begin{equation}
-U_k = U_0 - R_i \cdot I
+U_k = U_0 - R_i \cdot I.
 \label{Klemmenspannung}
 \end{equation}
 Hieraus folgt, dass die Klemmenspannung einer realen Spannungsquelle bei Belastung kleiner ist als die Leerlaufspannung. Eine ideale Spannungsquelle dagegen hat keinen Innenwiderstand. Desshalb ist die Klemmenspannung in diesem Fall unabh\"angig von der Belastung der Quelle.
@@ -67,13 +67,13 @@ P_{Max} = \frac{U_0^2}{4\cdot R_i}.
 \end{equation}
 
 \section{Versuchsdurchf\"uhrung}
-Im diesen Versuch werden $U_0$ und $R_i$ f\"ur folgende Sapnnungsquellen bestimmt. 
+Im diesen Versuch werden $U_0$ und $R_i$ f\"ur folgende Spannungsquellen bestimmt. 
 \begin{itemize}
 \item Monozelle
 \item RC-Generator (Rechteckspannung)
 \item RC-Generator (Sinusspannung)
 \end{itemize}
-\subsection{Direkte Messung der Leerlaaufspannung}
+\subsection{Direkte Messung der Leerlaufspannung}
 Die Klemmenspannung wird zun\"achst mit einem Voltmeter gemessen. Da dieses einen hohen Eingangswiderstand hat, flie\ss t nur ein geringer Strom und in Formel (\ref{Klemmenspannung}) kann der Term $R_i \cdot I$ vernachl\"assigt werden, sodass gilt: 
 \begin{equation}
 U_0 \approx U_k.
@@ -104,7 +104,7 @@ Sinusspannung&100& 5000\\
 \end{table}\\
 Um eine \"uberm\"assige Belastung der Spannungsquellen, vor allem bei niedrigen Lastwiderst\"anden zu verhindern, wird der Stromkreis mit dem Taster nur zur Messung geschlossen.
 \subsection{Messung mit Gegenspannung}
-Im letzten Veruschteil wird zus\"atzlich eine Gegensapannung 
+Im letzten Versuchsteil wird zus\"atzlich eine Gegenspannung 
 \[
 U_g = 3.58 V 
 \] an die Monozelle angelegt (siehe Abb. \ref{Aufbau2}). 
@@ -119,10 +119,13 @@ U_k = U_0 - U_g - I_*R.
 \end{equation}
 \section{Auswertung}
 
-<<<<<<< HEAD
-=======
+
 \subsection{Bestimmung von $U_0$ und $R_i$}
-Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemessenen Spannungswerte f\"ur $U_k$ gegen den Strom $I$ aufgetragen. Abbildung \ref{Plot1} zeigt den Verlauf f\"ur die Monozelle, Abbildung \ref{Plot2} f\"ur die Rechteckspannung und Abbildung \ref{Plot3} f\"ur die Sinusspannung. 
+Zur Bestimmung des Innenwiderstandes und der Leerlaufspannung werden die gemessenen Spannungswerte f\"ur $U_k$ gegen den Strom $I$ aufgetragen. Abbildung \ref{Plot1} zeigt den Verlauf f\"ur die Monozelle, Abbildung \ref{Plot2} f\"ur die Rechteckspannung und Abbildung \ref{Plot3} f\"ur die Sinusspannung. Alle Messwerttabellen des Versuches befinden sich im Anhang.
+
+
+ 
+
 \begin{sidewaysfigure}[htp]
 \centering
 \includegraphics[scale=1.00]{Plot1.png}
@@ -142,13 +145,57 @@ Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemess
 \caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle}
 \label{Plot3}
 \end{sidewaysfigure}
-\subsection{Direkte Messung von $U_0$}
-\subsection{Leistungder Monozelle}
->>>>>>> cf9286c4f7e31add3241bd0584cb0842b0a2ae80
-\section{Diskussion}
-\begin{table}[H]
+\newpage
+\noindent
+Mit Hilfe der Linearen Regression können jeweils der Innenwiderstand und die Leerlaufspannung der Spannungsquellen bestimmt werden. Folgende Werte wurden mit Python ermittelt:
+
+ \begin{table}[h]
  \centering
- \caption{Messwerte 1}
+ \caption{Ergebnis}
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Spannungsquelle & $R_I[\Omega]$ & $U[V]$ \\
+  \hline
+  Monozelle & $(11.58\pm$0.05) & $(1.6899\pm0.0028)$ \\
+  Rechteckspannung & $(61.3\pm0.9)$& $(0.4823\pm0.0028)$ \\
+  Sinusspannung & $(730\pm10)$ & $(1.692\pm0.007)$\\
+  \hline
+ \end{tabular}
+ \label{Ergebnis}
+ \end{table}
+
+\subsection{Direkte Messung von $U_0$}
+Die direkte Messung von $U_0$ der Monozelle ergab eine Leerlaufspannung von $1.68\, V$. Der Fehler der Leerlaufspannung ergibt sich aus einer kurzen Herleitung:\newline
+Aus Formel (3) ergibt sich
+\[ U_0 = U_k + I \cdot R_v. \]
+Mit $I=U_k / R_v$ ist
+\[ U_0 = U_k + \frac{U_k \cdot R_i}{R_v}.\]
+Durch Ausklammern von $U_k$ erhält man
+\[ U_0 = U_k \left( 1+\frac{R_i}{R_v}\right) .\]
+Nun ergibt sich der Fehler der Leerlaufspannung als
+\[ \Delta U = \frac{U_k \cdot R_i}{R_v}. \]
+Der Fehler der Leerlaufspannung der Monozelle beträgt jetzt
+\[ \Delta U_0 = 1.946 \cdot 10^{-6}.\]
+\newline
+Falls man das Voltmeter für die Messung der Spannung in der Schaltung hinter das Amperemeter setzt, macht man systematische Fehler. So zeigt eine Betrachtung der Maschenregel
+\[ 0 = -U_0 + U_k + R_i \cdot I + R_{Amp} \cdot I ,\]
+dass an dem Amperemeter auch ein Teil der Spannung abfällt:
+\[ U_k = U_0 - I(R_i + R_{Amp}). \]
+\newline
+Die mit dem Voltmeter gemessene Leerlaufspannung wird daher kleiner.
+\subsection{Leistung der Monozelle}
+
+\section{Diskussion}
+Die Multimeter haben eine Messgenauigkeit von $\pm 3 \%$. Die Multimeter sind allerdings analog, bei der Messung der RC-Generatoren waren die Zeiger teilweise in Schwingung. Dadurch ergibt sich eine Messungenauigkeit durch das Ablesen der Messwerte. Der angegebene Fehler von $\pm 3 \%$ kann daher vernachlässigt werden.
+ 
+\section{Abbildungsverzeichnis}
+\begin{itemize}
+\item Abbildung 1,2 und 3: Versuch 301 \textit{Leerlaufspannung und Innenwiderstand von Spannungsquellen}, Physikalisches Praktikum\\ TU Dortmund
+\end{itemize}
+\section{Anhang}
+\begin{table}[h]
+ \centering
+ \caption{Messung an der Monozelle}
  \begin{tabular}{|c|c|}
   \hline
   $U[V]$ & $I[mA]$  \\
@@ -170,9 +217,9 @@ Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemess
  \end{table}
  
  
- \begin{table}[H]
+ \begin{table}[h]
  \centering
- \caption{Messwerte 2}
+ \caption{Messung an der Monozelle mit Gegenspannung}
  \begin{tabular}{|c|c|}
   \hline
   $U[V]$ & $I[mA]$  \\
@@ -194,9 +241,9 @@ Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemess
  \end{table}
  
  
- \begin{table}[H]
+ \begin{table}[h]
  \centering
- \caption{Messwerte 3}
+ \caption{Messung an der Rechteckspannung}
  \begin{tabular}{|c|c|}
   \hline
   $U[V]$ & $I[mA]$  \\
@@ -218,9 +265,9 @@ Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemess
  \end{table}
  
  
- \begin{table}[H]
+ \begin{table}[h]
  \centering
- \caption{Messwerte 4}
+ \caption{Messung an der Sinusspannung}
  \begin{tabular}{|c|c|}
   \hline
   $U[V]$ & $I[mA]$  \\
@@ -240,11 +287,5 @@ Zur Besttimmung des Innenwiderstandes und der Leerlaufspannung werden die gemess
  \end{tabular}
  \label{Messung 4}
  \end{table}
- 
- 
-\section{Abbildungsverzeichnis}
-\begin{itemize}
-\item Abbildung 1,2 und 3: Versuch 301 \textit{Leerlaufspannung und Innenwiderstand von Span-
-nungsquellen}, Physikalisches Praktikum\\ TU Dortmund
-\end{itemize}
+
 \end{document}
