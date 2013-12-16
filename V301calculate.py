@@ -84,7 +84,7 @@ I2=vI2/1000.0
 I3=vI3/1000.0
 I4=vI4/1000.0
 I5=vI5/1000.0
-
+plt.close()
 print "Monozelle:"
 m,b = lin_reg(I2,U2)
 print "-Innenwiederstand:"
@@ -93,15 +93,33 @@ print "Leerlaufspannung:"
 print b
 Mono_Ri = - m
 Mono_U0 = b
-x = linspace(0.02,0.16)
+x = linspace(0,0.16)
 plt.plot(x, m.n*x+b.n, label = "Lineare Regression" )
 plt.plot(I2,U2,'x', label = "Messwerte")
 plt.xlabel('I[A]')
 plt.ylabel('U[V]')
-plt.xlim(0.02,0.16)
+plt.xlim(0.,0.16)
 plt.legend()
 plt.savefig('Plot1.png')
 plt.close()
+
+print "Monozelle mit Gegenspannung:"
+m,b = lin_reg(I3,U3)
+print "-Innenwiederstand:"
+print m
+print "Leerlaufspannung:"
+print b
+
+x = linspace(0,0.16)
+plt.plot(x, m.n*x+b.n, label = "Lineare Regression" )
+plt.plot(I3,U3,'x', label = "Messwerte")
+plt.xlabel('I[A]')
+plt.ylabel('U[V]')
+plt.xlim(0,0.16)
+plt.legend()
+plt.savefig('Plot5.png')
+plt.close()
+
 
 
 print "Rechteckausgang:"

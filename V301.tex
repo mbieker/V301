@@ -8,17 +8,15 @@
 \usepackage{inputenc}
 \usepackage{rotating} 
 \usepackage{graphicx}
+\usepackage{paralist}
 \usepackage{selinput}
 \SelectInputMappings{
 adieresis={ä},
 germandbls={ß},
 }
+
 \title{\textbf{Versuch V301: EMK und Innenwiderstand von Spannungsquellen}}
-\author{Martin Bieker\\
-		Julian Surmann\\
-		\\
-		Durchgef\"{u}hrt am 28.11.2013\\
-		TU Dortmund}
+\author{Martin Bieker \\ \textit{martin.bieker@udo.edu} \and Julian Surmann \\ \textit{julian.surmann@udo.edu}}
 \date{}
 \usepackage{graphicx}
 \begin{document}
@@ -26,6 +24,9 @@ germandbls={ß},
 \renewcommand\figurename{Abbildung}
 \maketitle
 \thispagestyle{empty}
+\begin{center} Durchgeführt am 28.11.2013\\ TU Dortmund \end{center}
+
+
 \newpage
 \clearpage
 \setcounter{page}{1}
@@ -37,10 +38,10 @@ Als Spannungsquelle beschreibt man ein elektrisches Bauteil mit zwei Anschl\"uss
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{abb3.png}
-\caption{Ersatzschaltung f\"ur eine reale Spannungsquelle}
+\caption{Ersatzschaltung f\"ur eine reale Spannungsquelle [1]}
 \label{Ersatz}
 \end{figure}
-Eine reale Spannungsquelle durch eine Ersatzschaltung aus einer idealen Spannungsquelle und einem Widerstand $R_i$ dargestellt werden (siehe Abb. \ref{Ersatz}). Hierbei ist $R_i$ der Innenwiderstand der Quelle und  $U_0$ die sogenannte Leerlaufspannung, dies ist die Spannung, die zwischen den Polen anliegt, wenn aus der Spannungsquelle kein Strom entnommen wird. $U_k$ ist die Klemmenspannung, die zwischen den Polen der belasteten Quelle anliegt. Gem\"a\ss\ der Maschenregel (2. Kirchhoffsches Gesetz)
+Eine reale Spannungsquelle kann  durch eine Ersatzschaltung aus einer idealen Spannungsquelle und einem Widerstand $R_i$ dargestellt werden (siehe Abb. \ref{Ersatz}). Hierbei ist $R_i$ der Innenwiderstand der Quelle und  $U_0$ die sogenannte Leerlaufspannung. Dies ist die Spannung, die zwischen den Polen anliegt, wenn aus der Spannungsquelle kein Strom entnommen wird. $U_k$ ist die Klemmenspannung, die zwischen den Polen der belasteten Quelle anliegt. Gem\"a\ss\ der Maschenregel (2. Kirchhoffsches Gesetz)
 \begin{equation}
 0 = -U_0 + U_k + U_{Ri}
 \end{equation}
@@ -53,10 +54,10 @@ gilt f\"ur die Klemmenspannung
 U_k = U_0 - R_i \cdot I.
 \label{Klemmenspannung}
 \end{equation}
-Hieraus folgt, dass die Klemmenspannung einer realen Spannungsquelle bei Belastung kleiner ist als die Leerlaufspannung. Eine ideale Spannungsquelle dagegen hat keinen Innenwiderstand. Desshalb ist die Klemmenspannung in diesem Fall unabh\"angig von der Belastung der Quelle.
+Hieraus folgt, dass die Klemmenspannung einer realen Spannungsquelle bei Belastung kleiner ist als die Leerlaufspannung. Eine ideale Spannungsquelle dagegen hat keinen Innenwiderstand. Deshalb ist die Klemmenspannung in diesem Fall unabh\"angig von der Belastung der Quelle.
 Des Weiteren wird aus Gleichung (\ref{Klemmenspannung}) ersichtlich, dass man einer realen Spannungsquelle nur eine begrenzte Leistung $P_{Max}$ entnehmen kann. Aus 
 \begin{equation}
-P = U \cdot I = R_a \cdot I^2 = \frac{U_0^2 * R_a}{(R_a+R_i)^2}
+P = U \cdot I = R_a \cdot I^2 = \frac{U_0^2 \cdot R_a}{(R_a+R_i)^2}
 \label{erw_leistung}
 \end{equation}
 folgt f\"ur den Lastwiderstand $R_a$
@@ -83,11 +84,11 @@ U_0 \approx U_k.
 \end{equation} 
 
 \subsection{Messung an der belasteten Spannungsquelle}
-Um den Innenwiderstand $R_i$ und nochmals die Leerlaufspannung $U_0$ zu messen wird die Spannungsquelle ein variabler Lastwiderstand $R_a$ angeschlossen und die Klemmensapnnung $U_k$ sowie der entnommene Strom $I$ gemessen. Abbildung \ref{Aufbau1} zeigt den verwendeten Aufbau. 
+Um den Innenwiderstand $R_i$ und nochmals die Leerlaufspannung $U_0$ zu messen wird an die Spannungsquelle ein variabler Lastwiderstand $R_a$ angeschlossen und die Klemmensapnnung $U_k$ sowie der entnommene Strom $I$ gemessen. Abbildung \ref{Aufbau1} zeigt den verwendeten Aufbau. 
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{abb1.png}
-\caption{Versuchsaufbau ohne Gegenspannung}
+\caption{Versuchsaufbau ohne Gegenspannung [1]}
 \label{Aufbau1}
 \end{figure}
 Die Gr\"o\ss e des Lastwiderstandes wird gleichm\"a\ss ig in den folgenden Bereichen variiert:
@@ -114,12 +115,13 @@ U_g = 3.58 V
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{abb2.png}
-\caption{Versuchsaufbau mit Gegenspannung}
+\caption{Versuchsaufbau mit Gegenspannung [1]}
 \label{Aufbau2}
-\end{figure}Analog zu oben werden der f\"ur 11 verschiedene Lastwiderst\"ande von $0\,\Omega$ bis $100\,\Omega$ die Klemmenspannung und der flie\ss ende Strom gemessen. F\"ur die gemesssene Spannung gilt nun nach der Maschenregel
+\end{figure}Analog zu oben werden der f\"ur 11 verschiedene Lastwiderst\"ande von $0\,\Omega$ bis $100\,\Omega$ die Klemmenspannung und der flie\ss ende Strom gemessen. Da $U_g \gg U_0$ ist, durchläuft der Strom $I$ die Masche in entgegengesetzter Richtung. Gemäß der Maschenregel gilt für $U_k$. 
 \begin{equation}
-U_k = U_0 - U_g - I_*R.
+U_k = U_0 + I\cdot R_i.
 \end{equation}
+\newpage
 \section{Auswertung}
 
 
@@ -129,26 +131,31 @@ Zur Bestimmung des Innenwiderstandes und der Leerlaufspannung werden die gemesse
 
  
 
-\begin{sidewaysfigure}[htp]
+\begin{sidewaysfigure}[p]
 \centering
 \includegraphics[scale=1.00]{Plot1.png}
-\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle}
+\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle (ohne Gegenspannnung)}
 \label{Plot1}
 \end{sidewaysfigure}
-
-\begin{sidewaysfigure}[htp]
+\begin{sidewaysfigure}[p]
+\centering
+\includegraphics[scale=1.00]{Plot5.png}
+\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle (mit Gegenspannnung)}
+\label{Plot1}
+\end{sidewaysfigure}
+\begin{sidewaysfigure}[p]
 \centering
 \includegraphics[scale=1.00]{Plot2.png}
-\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle}
+\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Rechteckspannung}
 \label{Plot2}
 \end{sidewaysfigure}
-\begin{sidewaysfigure}[htp]
+\begin{sidewaysfigure}[p]
 \centering
 \includegraphics[scale=1.00]{Plot3.png}
-\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Monozelle}
+\caption{$U_k$ in Abh\"angigkeit von $I$ f\"ur die Sinusspannung}
 \label{Plot3}
 \end{sidewaysfigure}
-\newpage
+
 \noindent
 Mit Hilfe der Linearen Regression können jeweils der Innenwiderstand und die Leerlaufspannung der Spannungsquellen bestimmt werden. Folgende Werte wurden mit Python ermittelt:
 
@@ -158,9 +165,10 @@ Mit Hilfe der Linearen Regression können jeweils der Innenwiderstand und die Le
   \hline
   Spannungsquelle & $R_I[\Omega]$ & $U[V]$ \\
   \hline
-  Monozelle & $(11.58\pm$0.05) & $(1.690\pm0.003)$ \\
-  Rechteckspannung & $(61.3\pm0.9)$& $(0.482\pm0.003)$ \\
-  Sinusspannung & $(730\pm10)$ & $(1.692\pm0.007)$\\
+  Monozelle & $11.58\pm0.05$ & $1.690\pm0.003$ \\
+  Monozelle mit Gegenspannung  & $10.0 \pm 0.3$ &$1.76\pm0.02$\\
+  Rechteckspannung & $61.3\pm0.9$& $0.482\pm0.003$ \\
+  Sinusspannung & $730\pm10$ & $1.692\pm0.007$\\
   \hline
  \end{tabular}
  \caption{Ergebnis - Innenwiderstand und Leerlaufspannung}
@@ -203,22 +211,23 @@ berechnet (siehe Tabelle \ref{leistung}). In Abbildung \ref{Plot4} sind dieser W
 \caption{Leistungsverlauf an der Monozelle}
 \label{Plot4}
 \end{sidewaysfigure}
-Es ist zu erkennen, dass die Abweichung der Messwerte von der Berechneten Kurve im Rahmen der Messungenauigkeit liegt. Des Weiteren ist erkennbar, dass das Maximum der von $R_a$ aufgenommen Leistung bei 
+Es ist zu erkennen, dass die Abweichung der Messwerte von der berechneten Kurve im Rahmen der Messungenauigkeit liegt. Des Weiteren ist erkennbar, dass das Maximum der von $R_a$ aufgenommen Leistung bei 
 \[
 R_a \approx R_i
 \]
-liegt. Dies Best\"atigt die Berechnungen im Rahmen der Leistungsanpassung (siehe Formel (\ref{leistungsanpassung})).
+liegt. Dies best\"atigt die Berechnungen im Rahmen der Leistungsanpassung (siehe Formel (\ref{leistungsanpassung})).
+\newpage
 \section{Diskussion}
-Die Multimeter haben eine Messgenauigkeit von $\pm 3 \%$. Da Multimeter allerdings analog sind, waren bei der Messung der RC-Generatoren die Zeiger teilweise in Schwingung. Dadurch ergibt sich eine Messungenauigkeit durch das Ablesen der Messwerte. Der angegebene Fehler von $\pm 3 \%$ kann daher bei der Ermittlung vernachlässigt werden. Allerdings taucht diese Messungenauigkeit der Multimeter bei dem Fehler der Regressionsgeraden wieder auf und ist daher berücksichtigt.
- 
- \newpage
-\section{Abbildungsverzeichnis}
-\begin{itemize}
-\item Abbildung 1,2 und 3: Versuch 301 \textit{Leerlaufspannung und Innenwiderstand von Spannungsquellen}, Physikalisches Praktikum\\ TU Dortmund
-\item Abbildung 4,5,6 und 7: Eigene Entwicklung mit python matplotlib
-\end{itemize}
+--MUSS NOCH--
+\section{Quellenverzeichnis}
+\begin{enumerate}[{[}1{]}]
+
+\item \textit{Leerlaufspannung und Innenwiderstand von Spannungsquellen}, Physikalisches Praktikum\\ TU Dortmund
+\end{enumerate}
+
 \section{Anhang}
 \begin{itemize}
+
 \item Tabelle 3: Messung an der Monozelle
 \item Tabelle 4: Messung an der Monozelle mit Gegenspannung
 \item Tabelle 5: Messung mit Rechteckspannung
@@ -226,6 +235,7 @@ Die Multimeter haben eine Messgenauigkeit von $\pm 3 \%$. Da Multimeter allerdin
 \item Tabelle 3: Leistungswerte der Monozelle
 \item Kopien des Messheftes
 \end{itemize}
+\newpage
 \begin{table}[h]
  \centering
 
